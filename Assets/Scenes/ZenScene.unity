@@ -6782,7 +6782,7 @@ GameObject:
   - component: {fileID: 1815932508}
   - component: {fileID: 1815932507}
   m_Layer: 0
-  m_Name: ruler (human)
+  m_Name: ruler (human=2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6955,7 +6955,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: 9f14e308898371238a84a2c559d3a217, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: 7d829e9607077bf4aa4be0f985e73ea1, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -7493,6 +7493,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 2136655491}
+  - {fileID: 1815932510}
   - {fileID: 1871417652}
   - {fileID: 1092015439}
-  - {fileID: 1815932510}
