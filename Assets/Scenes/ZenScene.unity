@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262bbbabf1d9a462ebc5db1e9df4c3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openAIApiKey: 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
+  openAIApiKey: 
   transcriptionModel: gpt-4o-mini-transcribe
   chatModel: gpt-4o-mini
   textToSpeechModel: gpt-4o-mini-tts
