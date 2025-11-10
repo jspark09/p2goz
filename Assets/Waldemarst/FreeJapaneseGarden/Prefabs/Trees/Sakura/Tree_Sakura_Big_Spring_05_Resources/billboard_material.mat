@@ -9,12 +9,14 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: billboard_material
   m_Shader: {fileID: 14002, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - EFFECT_BILLBOARD
   - EFFECT_BUMP
   - EFFECT_EXTRA_TEX
   - EFFECT_SUBSURFACE
-  - _WINDQUALITY_FASTEST
+  - _WINDQUALITY_BEST
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -22,6 +24,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -52,7 +55,7 @@ Material:
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 1
     - _TwoSided: 2
-    - _WindQuality: 1
+    - _WindQuality: 4
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0.7}
     - _HueVariationColor: {r: 1, g: 1, b: 1, a: 1}
