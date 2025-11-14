@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnvironmentToggle : MonoBehaviour
 {
@@ -22,11 +23,27 @@ public class EnvironmentToggle : MonoBehaviour
 
     private bool isDay = true; // Default = day
 
+    [Header("UI Toggles")]
+    public Toggle rainToggle; // Default = unchecked (clear)
+    public Toggle nightToggle; // Default = unchecked (day)
+
     void Start()
     {
-        // Ensure default state: day + clear
+        // Default state: day + clear
         isDay = true;
         isRaining = false;
+
+        if (rainToggle != null)
+        {
+            rainToggle.isOn = isRaining;
+            rainToggle.onValueChanged.AddListener(RainToggled);
+        }
+
+        if (nightToggle != null)
+        {
+            nightToggle.isOn = !isDay;
+            nightToggle.onValueChanged.AddListener(NightToggled);
+        }
 
         UpdateEnvironment();
     }
@@ -37,6 +54,12 @@ public class EnvironmentToggle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             isRaining = !isRaining;
+            
+            if (rainToggle != null)
+            {
+                rainToggle.isOn = isRaining;
+            }
+
             UpdateEnvironment();
         }
 
@@ -44,26 +67,46 @@ public class EnvironmentToggle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             isDay = !isDay;
+
+            if (nightToggle != null)
+            {
+                nightToggle.isOn = !isDay;
+            }
+
             UpdateEnvironment();
         }
     }
 
+    void RainToggled(bool value)
+    {
+        // Change the toggle UI
+        isRaining = value;
+        UpdateEnvironment();
+    }
+
+    void NightToggled(bool value)
+    {
+        // Chnage the toggle UI
+        isDay = !value;
+        UpdateEnvironment();
+    }
+
     void UpdateEnvironment()
     {
-        // --- Particles ---
+        // Particles 
         if (rainSystem != null)
         {
             if (isRaining) rainSystem.Play();
             else rainSystem.Stop();
         }
 
-        // --- Skyboxes ---
+        // Skyboxes 
         UpdateSkybox();
 
-        // --- Audio ---
+        // Audio
         UpdateAudio();
 
-        // --- Refresh lighting ---
+        // Refresh lighting
         DynamicGI.UpdateEnvironment();
     }
 
